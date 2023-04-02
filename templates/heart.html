@@ -1,0 +1,90 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+
+<body onkeydown="return (event.keyCode != 116)">
+    {% block main %}
+    <div style="background-color:#f6f6f6;padding:2em;margin-top:1em">
+        <h1 class="list-group-item list-group-item-success"
+            style="font-weight:bold;color:rgb(0,0,150);text-align:center">HEART DISEASE PREDICTOR</h1>
+        <!-- <h1 style="font-weight:bold;color:rgb(0,0,150)">Symptom Predictor</h1> -->
+
+        <form class="form-inline row justify-content-center" action="{{ url_for('heart_predict')}}" method="post">
+
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="Age">Age</label>
+                <input class="form-control" type="text" name="Age" placeholder="Enter Age" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="CigsPerDay">Cigarette consumption Per
+                    Day</label>
+                <input class="form-control" type="text" name="CigsPerDay" placeholder="Cigs per day" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="Cholestrol">Cholestrol</label>
+                <input class="form-control" type="text" name="Cholestrol" placeholder="170-300 mg/dL" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="SysBP">Systolic BP</label>
+                <input class="form-control" type="text" name="SysBP" placeholder="100-200 mmHg" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="DIaBP">Diastolic BP</label>
+                <input class="form-control" type="text" name="DIaBP" placeholder="70-140 mmHg" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="BMI">BMI</label>
+                <input class="form-control" type="text" name="BMI" placeholder="14-35 kg/m2" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="Heart Rate">Heart Rate</label>
+                <input class="form-control" type="text" name="HeartRate" placeholder="60-100 beats/min" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="GlucoseLevel">Glucose Level</label>
+                <input class="form-control" type="text" name="GlucoseLevel" placeholder="70-400 mg/dL" />
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="Gender">Gender</label>
+                <select class="form-control" name="Gender" id="gender">
+                    <option value="" selected disabled hidden>Select Gender</option>
+                    <option value=1>Male</option>
+                    <option value=0>Female</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="BpMedication">BP Medication</label>
+                <select class="form-control" name="BpMedication" id="bpmedication">
+                    <option value="" selected disabled hidden>BP Medication</option>
+                    <option value=1 style="color:black;">Yes, taking tablets for BP</option>
+                    <option value=0>No</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="PrevalentStroke">PrevalentStroke</label>
+                <select class="form-control" name="PrevalentStroke" id="prevalentstroke">
+                    <option value="" selected disabled hidden>Prevalent to Stroke</option>
+                    <option value=1>Yes</option>
+                    <option value=0>No</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:1.5em">
+                <label style="font-weight:bold;padding-bottom:5px" for="diabetes">Diabetes</label>
+                <select class="form-control" name="diabetes" id="diabetes">
+                    <option value="" selected disabled hidden>Diabetic</option>
+                    <option value=1>Yes, I am diabetic</option>
+                    <option value=0>No</option>
+                </select>
+            </div>  
+
+            <div class="row justify-content-center mt-4">
+                <button class="btn btn-outline-primary col-sm-12 col-xs-6">Predict</button>
+            </div>
+
+        </form>
+    </div>
+    {% endblock %}
+</body>
+<script>
+
+</script>

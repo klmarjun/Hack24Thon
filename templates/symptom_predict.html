@@ -1,0 +1,38 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+{% block main %}
+
+<!-- <div style="width:100%;background-color: pink;align-self: flex-end;">
+  <button class="btn btn-outline-danger" style="margin:1em 0;"> Predict More!</button>
+</div> -->
+<div class="row" style="background-color: #f1f1f1;padding:1em;height:100%">
+  <div class="col-lg-6 col-sm-12 block" style="padding:1em;">
+    <img src="{{url_for('static', filename='img_5.png')}}" alt="Image not available" style="width: 100%;height:100%">
+  </div>  
+  <div class="col-lg-6 col-sm-12 block" style="padding:1em;">
+    <div style="padding:1em;background-color: white;">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">DISEASE</h4>
+      <p>{{ disease }}</p>
+    </div>
+    <br>
+    <div style="padding:1em;background-color: white;">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">DESCRIPTION</h4>
+      <p>{{ description }}</p>
+    </div>
+    <br>
+    <div style="padding:1em;background-color: white;">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">PRECAUTION</h4>
+      <ul type="square">
+        {% for i in precaution%}
+          <li>{{i}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div> 
+  <!-- <div class="col-md-6" style="padding:1em;">
+    <img src="{{url_for('static', filename='img_2.jpg')}}" alt="Image not available" style="width: 100%;">
+  </div>   -->
+</div>
+
+{% endblock %}

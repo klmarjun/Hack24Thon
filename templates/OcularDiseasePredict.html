@@ -1,0 +1,36 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+{% block main %}
+
+<!-- <div style="width:100%;background-color: pink;align-self: flex-end;">
+  <button class="btn btn-outline-danger" style="margin:1em 0;"> Predict More!</button>
+</div> -->
+<div class="row" style="background-color: white;padding:1em;height:100%">
+  <div class="col-lg-6 col-sm-12 block" style="padding:1em;">
+    <img src="{{url_for('static', filename='eye.jpg')}}" alt="Image not available" style="width: 100%;height:100%">
+  </div>  
+  <div class="col-lg-6 col-sm-12 block" style="padding:1em;">
+    <div style="padding:1em;background-color: #f1f1f1">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">GLAUCOMA ANALYSIS</h4><br>
+      <b><h6>Predicted CDR ratio - {{cdr}}</h6>
+        <h6>Chances of having glaucoma - {{glaucoma}}</h6></b>
+    </div>
+    <br>
+    <div style="padding:1em;background-color: #f1f1f1">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">CATARACT ANALYSIS</h4><br>
+      <b><h6>Chances of having cataract - {{cataract}}</h6></b>
+    </div>
+    <br>
+    <div style="padding:1em;background-color: #f1f1f1">
+      <h4 style="font-weight:bold;color:rgb(0,0,150)">OVERALL ANALYSIS</h4>
+      <b><h6>{{status}}</h6>
+      </ul>
+    </div>
+  </div> 
+  <!-- <div class="col-md-6" style="padding:1em;">
+    <img src="{{url_for('static', filename='img_2.jpg')}}" alt="Image not available" style="width: 100%;">
+  </div>   -->
+</div>
+
+{% endblock %}

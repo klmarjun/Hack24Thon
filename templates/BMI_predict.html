@@ -1,0 +1,65 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+{% block main %}
+
+<div class="row justify-content-center" style="margin-top: 2em;">
+  
+  {% if index<=18.5 %}
+    <img src="https://media2.giphy.com/media/eta5ohCghAiAg/giphy.gif" style="width: 50%;">
+    <h3 style="font-weight: bold;font-size: 2em;text-align: center;margin-top:1em;">You are Extremely Weak</h3>
+    <h4 style="font-weight: bold;text-align: center;margin-top:10px;color:red;background-color: rgb(240,240,180);padding:0.5em;max-width:20em">Your predicted BMI is <span style="font-weight:900">{{index}}</span></h4>
+    
+
+    <div class="row justify-content-center" style="width:100%;margin-top:2em;">
+        <center>
+            <a href="home">
+                <button class="btn btn-success">Go Back to Homepage</button>
+            </a>
+        </center>
+    </div>
+  {% endif %}
+
+  {% if index>18.5 and index<=23 %}
+    <img src="https://64.media.tumblr.com/7bc79005fe24e2c6d2fc436d060e9e64/941852bfd1e987e4-54/s400x600/3854d34c31835dff7ea769ada830b09744279469.gifv" style="width: 30%;">
+    <h3 style="font-weight: bold;font-size: 2em;text-align: center;margin-top:1em;">You are just Normal</h3>
+    <h4 style="font-weight: bold;text-align: center;margin-top:10px;color:red;background-color: rgb(240,240,180);padding:0.5em;max-width:20em">Your predicted BMI is <span style="font-weight:900">{{index}}</span></h4>
+
+    <div class="row justify-content-center" style="width:100%;margin-top:2em;">
+        <center>
+            <a href="home">
+                <button class="btn btn-success">Go Back to Homepage</button>
+            </a>
+        </center>
+    </div>
+  {% endif %}
+  {% if index>23 and index<=30  %}
+    <img src="https://media.tenor.com/images/406cf8f193471246666864f18ea02479/tenor.gif" style="width: 30%;">
+    <h3 style="font-weight: bold;font-size: 2em;text-align: center;margin-top:1em;">You are Fat</h3>
+    <h4 style="font-weight: bold;text-align: center;margin-top:10px;color:red;background-color: rgb(240,240,180);padding:0.5em;max-width:20em">Your predicted BMI is <span style="font-weight:900">{{index}}</span></h4>
+
+    <div class="row justify-content-center" style="width:100%;margin-top:2em;">
+        <center>
+            <a href="home">
+                <button class="btn btn-success">Go Back to Homepage</button>
+            </a>
+        </center>
+    </div>
+  {% endif %}
+  {% if index>30 %}
+  <img src="https://comicvine1.cbsistatic.com/uploads/original/11128/111289205/5590824-tohrucelebrates.gif" alt="Image not available" style="width: 30%">
+    <h3 style="font-weight: bold;font-size: 2em;text-align: center;margin-top:1em;">You are Obese</h3>
+    <h4 style="font-weight: bold;text-align: center;margin-top:10px;color:red;background-color: rgb(240,240,180);padding:0.5em;max-width:20em">Your predicted BMI is <span style="font-weight:900">{{index}}</span></h4>
+
+    <div class="row justify-content-center" style="width:100%;margin-top:2em;">
+        <center>
+            <a href="home">
+                <button class="btn btn-success">Go Back to Homepage</button>
+            </a>
+        </center>
+    </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}
